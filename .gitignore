@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.pyo
+*.pyd
+*.db
+
+# Sanal ortam
+venv/
+ENV/
+env/
+*.egg-info/
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# Static & Media
+static/
+media/
+
+# Diğer
+*.log
