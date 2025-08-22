@@ -1,0 +1,370 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="d-flex vh-100">
+  <div id="sidebar" class="sidebar open">
+      <div class="d-flex flex-column px-3 py-2 border-bottom">
+          <h3 class="brand-title mb-2">Matador Regulation</h3>
+          <input type="text" id="filterInput" class="form-control filter-input" placeholder="Filter">
+      </div>
+
+    <div class="p-3">
+      <h5 class="menu-header ms-2 d-flex justify-content-between align-items-center"
+          data-bs-toggle="collapse" data-bs-target="#mufredatMenu">Müfredat İçeriği<span class="arrow">▼</span>
+      </h5>
+
+      <div class="collapse" id="mufredatMenu">
+        <ul class="list-unstyled ms-4">
+          <li><a href="#" class="menu-link" data-target="m1">Yeni Üyelere Deneme Bonusu İlk Yatırım Bonusu</a></li>
+          <li><a href="#" class="menu-link" data-target="m2">Yatırım Gelmeyen Üyeler</a></li>
+          <li><a href="#" class="menu-link" data-target="m3">Çekim İşlemlerinin Kontrolleri İptalleri ve Düzenlemeleri</a></li>
+          <li><a href="#" class="menu-link" data-target="m4">Çekim Protokolleri ve Limitleri</a></li>
+          <li><a href="#" class="menu-link" data-target="m5">Çevirim Hesaplama ve Sağlayıcılar</a></li>
+          <li><a href="#" class="menu-link" data-target="m6">Kural Dışı Katılımlar ve Cezalar</a></li>
+          <li><a href="#" class="menu-link" data-target="m7">Hesap Doğrulama ve İsim/Soy İsim Güncellemesi</a></li>
+          <li><a href="#" class="menu-link" data-target="m8">Hesabına Giriş Yapamayan Üyeler</a></li>
+          <li><a href="#" class="menu-link" data-target="m9">Telegram Kanallarının Takibi</a></li>
+          <li><a href="#" class="menu-link" data-target="m10">Teknik Sorunlar ve Çözümler</a></li>
+        </ul>
+      </div>
+
+      <h5 class="menu-header ms-2 mt-3 d-flex justify-content-between align-items-center"
+          data-bs-toggle="collapse" data-bs-target="#xpanelMenu">X Panel<span class="arrow">▼</span>
+      </h5>
+
+      <div class="collapse" id="xpanelMenu">
+        <ul class="list-unstyled ms-4">
+          <li><a href="#" class="menu-link" data-target="x1">GSM ve MAIL Güncelleme</a></li>
+          <li><a href="#" class="menu-link" data-target="x2">Hesap Kapatma Protokolleri</a></li>
+          <li><a href="#" class="menu-link" data-target="x3">Bahis Kontrolü ve Bahis Sözlüğü</a></li>
+          <li><a href="#" class="menu-link" data-target="x4">Kazancı Yansımayan Üyelerin Oyun Kont İşlemi</a></li>
+          <li><a href="#" class="menu-link" data-target="x5">Anlik ve Haftalık Kayıp Bonusu</a></li>
+          <li><a href="#" class="menu-link" data-target="x6">Admin Panel Kullanımı.</a></li>
+          <li><a href="#" class="menu-link" data-target="x7">Kaybeden Üyeler İle İletişim</a></li>
+          <li><a href="#" class="menu-link" data-target="x8">Güvenlik Protokolleri</a></li>
+          <li><a href="#" class="menu-link" data-target="x9">Chatte Operatörün Görev ve Sorumlulukları</a></li>
+        </ul>
+      </div>
+
+      <div class="mt-4">
+        <a class="btn btn-outline-danger w-100" href="{% url 'logout' %}">Çıkış Yap</a>
+      </div>
+    </div>
+  </div>
+
+  <button id="toggleBtn" class="toggle-btn">
+    <span id="toggleIcon">«</span>
+  </button>
+
+  <button id="themeToggle" class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0 m-3">
+      🌙 / ☀️
+  </button>
+
+  <div class="flex-grow-1 p-4">
+      <div id="m1" class="content d-none"><h2>Yeni Üyelere Deneme Bonusu İlk Yatırım Bonusu</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus...</p></div>
+      <div id="m2" class="content d-none"><h2>Yatırım Gelmeyen Üyeler</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus...</p></div>
+      <div id="m3" class="content d-none"><h2>Çekim İşlemlerinin Kontrolleri İptalleri ve Düzenlemeleri</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus...</p></div>
+      <div id="m4" class="content d-none"><h2>Çekim Protokolleri ve Limitleri</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus...</p></div>
+      <div id="m5" class="content d-none"><h2>Çevirim Hesaplama ve Sağlayıcılar</h2><p>
+          Sitede yatırım ve bonuslu yatırımların katılımlarının hesaplamaları mevcuttur. Altta yer alan başlıklarda<br>
+          bonuslu ve bonussuz çevirim hesaplamalarıyla beraber bazı çevirim tagleri belirtilmektedir.<p>
+          <h4>1. APC (Ana Para Çevirimi) Hesaplama</h4>
+          Site kuralları gereğince yatırım yapan ve sadece yatınım ile katılım yapan üyeler yatırımları kadar oyun oynamak<br>
+          zorundadırlar. Temel çevirim kuralları doğrultusunda çevirim yapmalan gerekir ve kural dışı katılımlar çevirime<br>
+          dahil olmaz.
+          <p></p>
+          <h5>1.1 Sporda Çevirim Kurali</h5>
+          <p></p>
+          <p>1. Sporda katılımların sayılabilmesi için minimum çevirim oranı 1.30 ve üzeri bahislerdir.<p>
+          <p>2. Tekli veya kombine şartı yoktur.<p>
+          <p>3. İptal edilen ve iade edilen bahisler çevirime dahil olmamaktadır.<p>
+          <p>4. Çapraz bahis yasaktır ve çevirime dahil olmaz, elde edilen kazanç sıfırlanır.<p>
+          <p>5. Süre açığı ile oluşturulan bahisler çevirime dahil olmaz ve elde edilen kazanç sıfırlanır.<p>
+          <p></p>
+          <h5>1.2 Slot ve Uçak Oyunlarında Çevirim Kuralları.</h5>
+          <p></p>
+          <p>1. Slot alanı çevirime dahil olan bölümlerden bir tanesidir.<p>
+          <p>2. Uçak ve türevi, çarpanlı oyun kategorisinde çarpan kuralı mevcuttur. x1.50 altı bozdurulan bahisler çevirime dahil değildir.<br>
+          (Bonuslu ve Bonussuz katılımlar için geçerlidir.)<p>
+          <p>3. Minimum çarpan altında bozdurulan çevirimler katılıma dahil değildir.
+          <p>4. Slot lobisin de yer alan Hacksaw Sağlayıcısnın Baccarat oyunu çevirime dahil olmamaktadır.
+          <p>5. Slot lobisin de yer alan Black Jack ve Rulet oyunları da çevirime dahil olmamaktadır.
+          <p></p>
+          <h5>1.3 Canlı Casino ve Gösteri Oyunlar Çevirim Kuralları.</h5>
+          <p></p>
+          <p>1. Gösteri oyunlarının hiç biri çevirime dahil değildir.<p>
+          <p>2. Gösteri oyunlarına sadece APC ve bonus çevirimi sona erdiğinde katılım yapılabilir.<p>
+          <p>3. Gösteri oyunlarına çevirim bitmeden yapılan katılımlar çevirime dahil olmaz ve kazanılan miktar düzenlenir.
+          <ul>
+              <li><p><h6> Casino Oyunlarının Bonuslu Yatırıma Katkısı Aşağıdaki Gibidir</h6></p></li>
+              <li><p>%100 Rulet</p></li>
+              <li><p>%50 BlackJack</p></li>
+              <li><p>%100 Holdem</p></li>
+              <li><p>%0 Diğer Canlı Casino Oyunlan</p></li>
+          </ul>
+      </p></div>
+      <div id="m6" class="content d-none"><h4>Kural Dışı Katılımlar ve Cezalar</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus...</p></div>
+      <div id="m7" class="content d-none"><h4>Hesap Doğrulama ve İsim/Soy İsim Güncellemesi</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus...</p></div>
+      <div id="m8" class="content d-none"><h4>Hesabına Giriş Yapamayan Üyeler</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus...</p></div>
+      <div id="m9" class="content d-none"><h4>Telegram Kanallarının Takibi</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus...</p></div>
+      <div id="m10" class="content d-none"><h4>Teknik Sorunlar ve Çözümler</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus...</p></div>
+
+      <div id="x1" class="content d-none"><h4>GSM ve MAIL Güncelleme</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus...</p></div>
+      <div id="x2" class="content d-none"><h4>Hesap Kapatma Protokolleri</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus...</p></div>
+      <div id="x3" class="content d-none"><h4>Bahis Kontrolü ve Bahis Sözlüğü</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus...</p></div>
+      <div id="x4" class="content d-none"><h4>Kazancı Yansımayan Üyelerin Oyun Kont İşlemi</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus...</p></div>
+      <div id="x5" class="content d-none"><h4>Anlık ve Haftalık Kayıp Bonusu</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus...</p></div>
+      <div id="x6" class="content d-none"><h4>Admin Panel Kullanımı</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus...</p></div>
+      <div id="x7" class="content d-none"><h4>Kaybeden Üyeler İle İletişim</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus...</p></div>
+      <div id="x8" class="content d-none"><h4>Güvenlik Protokolleri</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus...</p></div>
+      <div id="x9" class="content d-none"><h4>Chatte Operatörün Görev ve Sorumlulukları</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus...</p></div>
+  </div>
+  </div>
+
+<style>
+  .sidebar {
+    width: 400px;
+    background: #fff;
+    border-right: 1px solid #ddd;
+    overflow-x: hidden;
+    transition: width 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .sidebar.closed {
+    width: 0;
+  }
+
+  .toggle-btn {
+    position: absolute;
+    top: 5px;
+    left: 400px;
+    z-index: 1000;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-left: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.closed + .toggle-btn {
+    left: 0;
+  }
+
+  .brand-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+
+  .menu-header {
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #222;
+    transition: color 0.2s ease;
+  }
+
+  .menu-header .arrow {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+  }
+
+  .menu-header.open {
+    color: #339af0;
+    font-weight: 600;
+  }
+
+  .menu-link {
+    display: block;
+    padding: 4px 8px;
+    font-size: 0.95rem;
+    color: #444;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 2px;
+  }
+
+  .menu-link.active {
+    background-color: rgba(13,110,253,0.15);
+    color: #0d6efd;
+    font-weight: 600;
+  }
+
+  .filter-input {
+      max-width: 90%;
+      margin: 15px auto 15px 10px;
+      font-size: 1rem;
+      padding: 4px 8px;
+  }
+
+  body {
+      background-color: #fff;
+      color: #000;
+      transition: background-color 0.8s ease, color 0.8s ease;
+  }
+
+  body.dark-mode {
+      background-color: #121212;
+      color: #f1f1f1;
+  }
+
+  .sidebar {
+      transition: background-color 0.8s ease, border-color 0.8s ease;
+  }
+
+  body.dark-mode .sidebar {
+      background: #201c1c;
+      border-right: 1px solid #333;
+  }
+
+  .flex-grow-1 {
+      transition: background-color 0.8s ease, color 0.8s ease;
+      min-width: 0;
+      overflow-wrap: break-word;
+  }
+
+  body.dark-mode .flex-grow-1 {
+      background: #282424;
+      color: #f1f1f1;
+  }
+
+  .menu-link {
+      display: block;
+      padding: 4px 8px;
+      font-size: 0.95rem;
+      color: #444;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-bottom: 2px;
+  }
+
+  .menu-link.active {
+      background-color: rgba(13,110,253,0.15);
+      color: #0d6efd;
+      font-weight: 600;
+      transition: none !important;
+  }
+
+  body.dark-mode .menu-link {
+      color: #ccc;
+  }
+
+  body.dark-mode .menu-link.active {
+      background-color: rgba(13,110,253,0.25);
+      color: #0d6efd;
+      transition: none !important;
+  }
+
+  .menu-header {
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: #222;
+  }
+
+  body.dark-mode .menu-header {
+      color: #ddd;
+  }
+
+  body.dark-mode .brand-title {
+      color: #f1f1f1;
+  }
+
+  .menu-header {
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: #222;
+      transition: color 0.8s ease;
+  }
+
+  body.dark-mode .menu-header {
+      color: #ddd;
+  }
+
+  .menu-header.open {
+      color: #339af0 !important;
+      font-weight: 600;
+      transition: none !important;
+  }
+
+  body.dark-mode .menu-header.open {
+      color: #339af0 !important;
+      transition: none !important;
+  }
+</style>
+
+<script>
+  const sidebar = document.getElementById("sidebar");
+  const toggleBtn = document.getElementById("toggleBtn");
+  const toggleIcon = document.getElementById("toggleIcon");
+
+  toggleBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("closed");
+    if (sidebar.classList.contains("closed")) {
+      toggleIcon.textContent = "»";
+    } else {
+      toggleIcon.textContent = "«";
+    }
+  });
+
+  const links = document.querySelectorAll('.menu-link');
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelectorAll('.content').forEach(c => c.classList.add('d-none'));
+      links.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+      const target = this.getAttribute('data-target');
+      document.getElementById(target).classList.remove('d-none');
+    });
+  });
+
+  const collapses = document.querySelectorAll('.collapse');
+  collapses.forEach(collapse => {
+    collapse.addEventListener('show.bs.collapse', function () {
+      this.previousElementSibling.classList.add('open');
+      this.previousElementSibling.querySelector('.arrow').textContent = "▲";
+    });
+    collapse.addEventListener('hide.bs.collapse', function () {
+      this.previousElementSibling.classList.remove('open');
+      this.previousElementSibling.querySelector('.arrow').textContent = "▼";
+    });
+  });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.collapse').forEach(c => {
+      const arrow = c.previousElementSibling.querySelector('.arrow');
+      if (c.classList.contains('show')) {
+        c.previousElementSibling.classList.add('open');
+        arrow.textContent = "▲";
+      } else {
+        arrow.textContent = "▼";
+      }
+    });
+  });
+
+  document.getElementById('filterInput').addEventListener('keyup', function() {
+      let filterValue = this.value.toLowerCase();
+      let items = document.querySelectorAll(".menu-link");
+
+      items.forEach(item => {
+          let text = item.textContent.toLowerCase();
+          if (text.includes(filterValue)) {
+              item.parentElement.style.display = "";  // li görünür
+          } else {
+              item.parentElement.style.display = "none"; // li gizlenir
+          }
+      });
+  });
+
+  const themeToggle = document.getElementById("themeToggle");
+  themeToggle.addEventListener("click", () => {
+      document.body.classList.add("transitioning");
+      setTimeout(() => {
+          document.body.classList.toggle("dark-mode");
+          document.body.classList.remove("transitioning");
+      }); // 50ms sonra geçiş başlar
+  });
+</script>
+{% endblock %}
