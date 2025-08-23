@@ -3,8 +3,8 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-please-change-this-in-production'
-DEBUG = True
-ALLOWED_HOSTS = ['*']
+DEBUG = False
+ALLOWED_HOSTS = ['matadormufredat.alwaysdata.net']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -68,6 +68,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 import os
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
